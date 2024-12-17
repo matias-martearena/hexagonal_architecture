@@ -1,8 +1,6 @@
-import {
-  type AuthDetails,
-  type Permissions,
-  type ForControlAuthenticating,
-} from '../../ports/drivens'
+import { type AuthDetails, type Permissions } from './../../app/schemas'
+
+import { type ForControlAuthenticating } from '../../ports/drivens'
 
 const authDetailsMock: AuthDetails = {
   token: '123123123',

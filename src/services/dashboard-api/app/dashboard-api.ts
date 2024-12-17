@@ -3,11 +3,9 @@ import {
   type ForRepoQuerying,
 } from '../ports/drivens'
 
-import {
-  type AuthenticatedUser,
-  type ForAuthenticating,
-  type User,
-} from '../ports/drivers'
+import { type ForAuthenticating } from '../ports/drivers'
+
+import { type User, type AuthenticatedUser } from './schemas'
 
 export class DashboardApi implements ForAuthenticating {
   constructor(

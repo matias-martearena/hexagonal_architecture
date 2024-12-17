@@ -1,10 +1,8 @@
 import { DashboardApi } from '../../app'
 
-import {
-  type AuthenticatedUser,
-  type ForAuthenticating,
-  type User,
-} from '../../ports/drivers'
+import { type User, type AuthenticatedUser } from '../../app/schemas'
+
+import { type ForAuthenticating } from '../../ports/drivers'
 
 export class AuthenticatorProxyAdapter implements ForAuthenticating {
   constructor(private readonly dashboardApi: DashboardApi) {}
