@@ -1,7 +1,11 @@
-import { ForControlAuthenticating, ForRepoQuerying } from '../ports/drivens'
 import {
-  AuthenticatedUser,
-  ForAuthenticating,
+  type ForControlAuthenticating,
+  type ForRepoQuerying,
+} from '../ports/drivens'
+
+import {
+  type AuthenticatedUser,
+  type ForAuthenticating,
   type User,
 } from '../ports/drivers'
 

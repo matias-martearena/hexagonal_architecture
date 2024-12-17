@@ -1,5 +1,6 @@
 import { AuthenticatorProxyAdapter } from './../adapters/drivers'
 import { ControlAuthenticatorStub, RepoQuerierStub } from '../adapters/drivens'
+
 import { DashboardApi } from './dashboard-api'
 
 const compositionMock = () => {

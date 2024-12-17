@@ -1,4 +1,4 @@
-import { DashboardApi } from '../../app/dashboard-api'
+import { DashboardApi } from '../../app'
 
 import {
   type AuthenticatedUser,
