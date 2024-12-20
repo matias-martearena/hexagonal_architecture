@@ -3,8 +3,8 @@ import { type AuthDetails, type Permissions } from './../../app/schemas'
 import { type ForControlAuthenticating } from '../../ports/drivens'
 
 const authDetailsMock: AuthDetails = {
-  token: '123123123',
-  refreshToken: '123123123',
+  token: 'token',
+  refreshToken: 'refreshToken',
 }
 
 const permissionsMock: Permissions = {

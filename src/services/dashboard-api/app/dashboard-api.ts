@@ -29,7 +29,7 @@ export class DashboardApi implements ForAuthenticating {
     const result = {
       ...user,
       ...authDetails,
-      ...permissions,
+      permissions,
     }
 
     return result
@@ -51,7 +51,7 @@ export class DashboardApi implements ForAuthenticating {
     const result = {
       ...newUser,
       ...authDetails,
-      ...permissions,
+      permissions,
     }
 
     return result
