@@ -1,4 +1,4 @@
-import { type AuthDetails, type Permissions } from '../../app/schemas'
+import { type AuthDetails, type Permissions } from '../../app/schemas/auth'
 
 export interface ForControlAuthenticating {
   getAuthDetails: (email: string, password: string) => Promise<AuthDetails>

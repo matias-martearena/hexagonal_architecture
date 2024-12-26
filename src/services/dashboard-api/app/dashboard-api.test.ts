@@ -1,9 +1,10 @@
 import { describe, expect, it } from 'vitest'
 
-import { ControlAuthenticatorStub, RepoQuerierStub } from '../adapters/drivens'
+import { ControlAuthenticatorStub } from '../adapters/drivens/control-authenticator-stub-adapter'
+import { RepoQuerierStub } from '../adapters/drivens/repo-querier-stub-adapter'
 import { DashboardApi } from './dashboard-api'
 
-import { type User, type AuthenticatedUser } from './schemas'
+import { type User, type AuthenticatedUser } from './schemas/user'
 
 // concurrent: For execute test on parallel way
 

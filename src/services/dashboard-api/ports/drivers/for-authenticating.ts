@@ -1,4 +1,4 @@
-import { type AuthenticatedUser, type User } from '../../app/schemas'
+import { type AuthenticatedUser, type User } from '../../app/schemas/user'
 
 export interface ForAuthenticating {
   login: (email: string, password: string) => Promise<AuthenticatedUser>

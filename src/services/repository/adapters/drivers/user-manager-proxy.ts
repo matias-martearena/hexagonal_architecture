@@ -1,5 +1,7 @@
-import { Repository, type ExternalUser, type User } from '../../app'
-import { type ForManagingUser } from '../../ports/drivers'
+import { Repository } from '../../app/repository'
+import { type ExternalUser, type User } from '../../app/schemas/user'
+
+import { type ForManagingUser } from '../../ports/drivers/for-managing-user'
 
 export class UserManagerProxy implements ForManagingUser {
   constructor(private readonly repository: Repository) {}

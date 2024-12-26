@@ -1,6 +1,6 @@
-import { type ForMonitoring } from '../ports/drivens'
-import { type ForManagingUser } from '../ports/drivers'
-import { type ExternalUser, type RepoUser, type User } from './schemas'
+import { type ForMonitoring } from '../ports/drivens/for-monitoring'
+import { type ForManagingUser } from '../ports/drivers/for-managing-user'
+import { type ExternalUser, type RepoUser, type User } from './schemas/user'
 
 export class Repository implements ForManagingUser {
   private readonly userList: RepoUser[] = []

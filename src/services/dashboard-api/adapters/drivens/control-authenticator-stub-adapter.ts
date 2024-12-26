@@ -1,6 +1,6 @@
-import { type AuthDetails, type Permissions } from './../../app/schemas'
+import { type AuthDetails, type Permissions } from './../../app/schemas/auth'
 
-import { type ForControlAuthenticating } from '../../ports/drivens'
+import { type ForControlAuthenticating } from '../../ports/drivens/for-control-authenticating'
 
 const authDetailsMock: AuthDetails = {
   token: 'token',
@@ -13,11 +13,11 @@ const permissionsMock: Permissions = {
 }
 
 export class ControlAuthenticatorStub implements ForControlAuthenticating {
-  getAuthDetails(email: string, password: string): Promise<AuthDetails> {
+  getAuthDetails(_email: string, _password: string): Promise<AuthDetails> {
     return Promise.resolve(authDetailsMock)
   }
 
-  getPermissions(email: string, password: string): Promise<Permissions> {
+  getPermissions(_email: string, _password: string): Promise<Permissions> {
     return Promise.resolve(permissionsMock)
   }
 }

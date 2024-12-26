@@ -1,5 +1,6 @@
-import { AuthenticatorProxyAdapter } from '../adapters/drivers'
-import { ControlAuthenticatorStub, RepoQuerierStub } from '../adapters/drivens'
+import { AuthenticatorProxyAdapter } from '../adapters/drivers/authenticator-proxy-adapter'
+import { ControlAuthenticatorStub } from '../adapters/drivens/control-authenticator-stub-adapter'
+import { RepoQuerierStub } from '../adapters/drivens/repo-querier-stub-adapter'
 
 import { DashboardApi } from './dashboard-api'
 

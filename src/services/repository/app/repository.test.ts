@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest'
 
 import { Repository } from './repository'
-import { LoggerStubAdapter } from '../adapters/drivens'
+import { LoggerStubAdapter } from '../adapters/drivens/logger-stub-adapter'
 
-import { type ExternalUser, type User } from './schemas'
+import { type ExternalUser, type User } from './schemas/user'
 
 describe('Repository', () => {
   const monitoryStub = new LoggerStubAdapter()

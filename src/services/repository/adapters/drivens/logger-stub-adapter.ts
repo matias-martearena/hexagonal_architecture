@@ -1,4 +1,4 @@
-import { type ForMonitoring } from '../../ports/drivens'
+import { type ForMonitoring } from '../../ports/drivens/for-monitoring'
 
 export class LoggerStubAdapter implements ForMonitoring {
   log(event: string, message: string): void {
