@@ -1,4 +1,4 @@
-import { type User as RepoUser } from '../../../repository/app/schemas'
+import { type RepoUser } from '../../../repository/app/schemas'
 import { type User } from '../../app/schemas'
 
 export interface ForRepoQuerying {

@@ -1,4 +1,4 @@
-import { type User as RepoUser } from '../../../repository/app/schemas'
+import { type RepoUser } from '../../../repository/app/schemas'
 import { ForRepoQuerying } from '../../ports/drivens'
 
 const userMock: RepoUser = {
