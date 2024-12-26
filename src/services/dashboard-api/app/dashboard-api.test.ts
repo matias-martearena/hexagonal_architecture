@@ -50,6 +50,7 @@ describe('DashboardApi', () => {
     const mockedUser: User = {
       email: 'john@gmail.com',
       name: 'John Doe',
+      password: 'password',
     }
 
     const expectedResult: AuthenticatedUser = {
@@ -65,7 +66,7 @@ describe('DashboardApi', () => {
     }
 
     // WHEN: Implement the method
-    const result = await dashboardApiMock.register(mockedUser, '123456')
+    const result = await dashboardApiMock.register(mockedUser)
 
     // THEN: Check the result
     expect(result).toEqual(expectedResult)

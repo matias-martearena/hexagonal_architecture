@@ -8,4 +8,4 @@ export interface RepoUser extends User {
   id: string
 }
 
-export type ExternalUser = Omit<User, 'password'>
+export type ExternalUser = Omit<RepoUser, 'password'>

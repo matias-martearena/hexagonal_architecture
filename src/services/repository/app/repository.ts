@@ -17,7 +17,11 @@ export class Repository implements ForManagingUser {
       throw new Error('User not found')
     }
 
-    return user
+    return {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+    }
   }
 
   async createUser(user: User): Promise<ExternalUser> {
@@ -35,6 +39,10 @@ export class Repository implements ForManagingUser {
 
     this.userList.push(newUser)
 
-    return newUser
+    return {
+      id: newUser.id,
+      name: newUser.name,
+      email: newUser.email,
+    }
   }
 }

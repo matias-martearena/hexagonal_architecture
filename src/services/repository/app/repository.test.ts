@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest'
 import { Repository } from './repository'
 import { LoggerStubAdapter } from '../adapters/drivens'
 
-import { type RepoUser, type User } from './schemas'
+import { type ExternalUser, type User } from './schemas'
 
 describe('Repository', () => {
   const monitoryStub = new LoggerStubAdapter()
@@ -15,7 +15,7 @@ describe('Repository', () => {
       // GIVEN
       const mockedEmail: string = 'samuelcito@gmail.com'
 
-      const expectedResult = {
+      const expectedResult: ExternalUser = {
         id: '1',
         name: 'Samuel',
         email: mockedEmail,
@@ -45,9 +45,10 @@ describe('Repository', () => {
       password: 'password',
     }
 
-    const expectedResult: RepoUser = {
+    const expectedResult: ExternalUser = {
       id: '1',
-      ...mockedUser,
+      name: mockedUser.name,
+      email: mockedEmail,
     }
 
     // WHEN
@@ -57,41 +58,41 @@ describe('Repository', () => {
     expect(result).toEqual(expectedResult)
   })
 
-  it.concurrent(
-    'should control that the user already exist get user',
-    async () => {
-      // GIVEN
-      const mockedEmail: string = 'samuelcito@gmail.com'
+  it.concurrent('should control that the user already exists', async () => {
+    // GIVEN
+    const mockedUser: User = {
+      name: 'Samuel',
+      email: 'samuelcito@gmail.com',
+      password: 'password',
+    }
 
-      const expectedResult = {
-        id: '1',
-        name: 'Samuel',
-        email: mockedEmail,
-      }
+    const expectedResult: ExternalUser = {
+      id: '1',
+      name: mockedUser.name,
+      email: mockedUser.email,
+    }
 
-      let result
+    let result
 
-      // WHEN
-      try {
-        result = await repositoryMock.getUser(mockedEmail)
-      } catch (error) {
-        console.error(error)
-      }
+    // WHEN
+    try {
+      result = await repositoryMock.createUser(mockedUser)
+    } catch (error) {
+      console.error(error)
+    }
 
-      // THEN
-      expect(result).not.toEqual(expectedResult)
-    },
-  )
+    //THEN
+    expect(result).not.toEqual(expectedResult)
+  })
 
   it.concurrent('should get an user', async () => {
     // GIVEN
     const mockedEmail: string = 'samuelcito@gmail.com'
 
-    const expectedResult = {
+    const expectedResult: ExternalUser = {
       id: '1',
       name: 'Samuel',
       email: mockedEmail,
-      password: 'password',
     }
 
     // WHEN
