@@ -1,7 +1,6 @@
+import { type ForAuthenticating } from '../ports/drivers/for-authenticating'
 import { type ForControlAuthenticating } from '../ports/drivens/for-control-authenticating'
 import { type ForRepoQuerying } from '../ports/drivens/for-repo-querying'
-
-import { type ForAuthenticating } from '../ports/drivers/for-authenticating'
 
 import { type User, type AuthenticatedUser } from './schemas/user'
 

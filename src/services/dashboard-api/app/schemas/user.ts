@@ -1,14 +1,20 @@
-import { type Permissions } from './auth'
+import { z } from 'zod'
+import { permissionsSchema } from './auth'
 
-export interface AuthenticatedUser {
-  email: string
-  name: string
-  id: string
-  token: string
-  refreshToken: string
-  permissions: Permissions
-}
+export const authenticatedUserSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  email: z.string(),
+  token: z.string(),
+  refreshToken: z.string(),
+  permissions: permissionsSchema,
+})
 
-export interface User extends Pick<AuthenticatedUser, 'email' | 'name'> {
-  password: string
-}
+export const userSchema = z.object({
+  name: z.string(),
+  email: z.string(),
+  password: z.string(),
+})
+
+export type AuthenticatedUser = z.infer<typeof authenticatedUserSchema>
+export type User = z.infer<typeof userSchema>

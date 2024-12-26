@@ -1,9 +1,14 @@
-export interface AuthDetails {
-  token: string
-  refreshToken: string
-}
+import { z } from 'zod'
 
-export interface Permissions {
-  admin: boolean
-  user: boolean
-}
+export const authDetailsSchema = z.object({
+  token: z.string(),
+  refreshToken: z.string(),
+})
+
+export const permissionsSchema = z.object({
+  admin: z.boolean(),
+  user: z.boolean(),
+})
+
+export type AuthDetails = z.infer<typeof authDetailsSchema>
+export type Permissions = z.infer<typeof permissionsSchema>
